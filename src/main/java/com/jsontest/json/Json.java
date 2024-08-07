@@ -6,20 +6,21 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
+import lombok.Setter;
 
 @Entity
 @Data
 public class Json {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter
     private Long user_id;
     private String username;
     private Integer post_count;
 
-    public Long getId(){
+    public Long getuserId(){
         return user_id;
     }
-    public void setId(Long user_id){
+    public void setuserId(Long user_id){
         this.user_id = user_id;
     }
     public String getname(){
