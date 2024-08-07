@@ -8,6 +8,8 @@
     <title>Document</title>
 </head>
 <body>
+<div th:replace="~{nav.html::navbar}"></div>
+
     <h1>Save JSON Data to Database</h1>
     <button id="saveBtn">Save JSON Data</button>
 
@@ -18,14 +20,14 @@
             })
             .then(response => {
                 if (response.ok) {
-                    alert("Data saved successfully!");
+                    alert("저장성공!");
                 } else {
-                    alert("Failed to save data.");
+                    alert("저장실패.");
                 }
             })
             .catch(error => {
                 console.error("Error:", error);
-                alert("An error occurred.");
+                alert("error 발생.");
             });
         });
     </script>

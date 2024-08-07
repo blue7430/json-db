@@ -22,6 +22,7 @@ import java.util.List;
         //json 파일 경로지정
         public void init() {
             String jsonFilePath = "data.json";
+            //data.json 자리에 다른 json 파일로 변경해서 다른 데이터 저장 가능
 
         Gson gson = new Gson();
 
@@ -40,5 +41,10 @@ import java.util.List;
     }
     public  List<Json> getAllJsons(){
             return jsonRepository.findAll();
+    }
+
+    public int calculateSum(){
+            List<Json> jsons = jsonRepository.findAll();
+            return jsons.stream().mapToInt(Json::getcount).sum();
     }
 }

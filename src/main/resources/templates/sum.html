@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -9,14 +9,6 @@
 </head>
 <body>
 <div th:replace="~{nav.html::navbar}"></div>
-
-    <div class="card" th:each="j : ${jsons}">
-        <div>
-            <p th:text="${'user_id : '+j.user_id}"></p>
-            <p th:text="${'user_name : '+j.username}"></p>
-            <p th:text="${'post_count : '+j.post_count}"></p>
-            <br><br>
-        </div>
-    </div>
+    <p>Post_count 총합 : <span th:text="${sum}"></span></p>
 </body>
 </html>

@@ -36,7 +36,14 @@ public class JsonController {
         List<Json> result = jsonRepository.findAll();
         model.addAttribute("jsons", result);
         return "jsons";
-
     }
+
+    @GetMapping("/sum")
+    public String getSum(Model model){
+        int sum = jsonService.calculateSum();
+        model.addAttribute("sum", sum);
+        return "sum";
+    }
+
 
 }
