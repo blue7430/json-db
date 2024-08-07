@@ -18,10 +18,10 @@ import java.util.List;
         @Autowired
         private JsonRepository jsonRepository;
 
-        @PostConstruct
+
         //json 파일 경로지정
         public void init() {
-            String jsonFilePath = "user-data.json";
+            String jsonFilePath = "data.json";
 
         Gson gson = new Gson();
 
@@ -42,6 +42,3 @@ import java.util.List;
             return jsonRepository.findAll();
     }
 }
-
-
-
